@@ -216,6 +216,43 @@ body {
   box-shadow: var(--shadow-xl);
 }
 
+/* Dataset overview figure (Abstract 下方静态框架图) */
+.dataset-overview {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.dataset-overview-figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dataset-overview-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dataset-dynamic .hero-body {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.dataset-dynamic-video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background: var(--background-primary);
+}
+
+.dataset-dynamic-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Modern Video and Carousel Styling */
 .publication-video {
     position: relative;
@@ -239,6 +276,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
     border-radius: var(--border-radius-lg);
 }
 
