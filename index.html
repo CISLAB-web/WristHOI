@@ -71,7 +71,7 @@
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
   <!-- TODO: Replace with your paper title and authors -->
   <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
@@ -100,6 +100,9 @@
   
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google model-viewer (3D GLB) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -241,7 +244,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interation</h1>
+            <h1 class="title is-1 publication-title">WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -357,18 +360,22 @@
 <section class="section dataset-overview">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Overview</h2>
-    <p class="subtitle is-6 has-text-centered has-text-grey">
-      示例：此处为数据集框架示意（当前使用 static 内占位图，可自行替换）。
-    </p>
+<!--    <p class="subtitle is-6 has-text-centered has-text-grey">-->
+<!--      示例：此处为数据集框架示意（当前使用 static 内占位图，可自行替换）。-->
+<!--    </p>-->
     <figure class="publication-banner dataset-overview-figure">
       <img
-        src="static/images/carousel1.jpg"
-        alt="示例：WristHOI 数据集 Overview 占位图"
+        src="static/images/fig011.png"
+        alt="Figure 1: Overview of WristHOI. (Left) Comparison with
+              existing egocentric and allocentric HOI datasets. (Right) Example of a hand–object interaction sequence with annotated
+              temporal phase"
         loading="lazy"
       />
     </figure>
-    <p class="content is-size-7 has-text-centered has-text-grey mt-3">
-      示例图注：请将 <code>carousel1.jpg</code> 换为你的正式框架图文件路径。
+    <p class="content is-size-6 has-text-centered has-text-grey mt-3">
+      Figure 1: Overview of WristHOI. (Left) Comparison with
+              existing egocentric and allocentric HOI datasets. (Right) Example of a hand–object interaction sequence with annotated
+              temporal phase
     </p>
   </div>
 </section>
@@ -404,7 +411,67 @@
 </section>
 <!-- End dynamic highlights -->
 
-
+<!-- 3D object samples (GLB via model-viewer) -->
+<section class="section dataset-models" id="dataset-3d">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">3D Object Samples</h2>
+    <p class="subtitle is-6 has-text-centered has-text-grey mb-5">
+      拖拽旋转、滚轮缩放；模型来自 <code>static/glb/</code>。若某项无法加载，请确认对应 <code>.glb</code> 已放入该目录。
+    </p>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-12-tablet is-4-desktop">
+        <div class="model-viewer-card">
+          <p class="has-text-centered is-size-7 has-text-grey mb-2">示例：model.glb</p>
+          <model-viewer
+            class="dataset-glb-viewer"
+            src="static/glb/model.glb"
+            alt="3D 模型 model.glb"
+            camera-controls
+            auto-rotate
+            interaction-prompt="none"
+            exposure="1"
+            shadow-intensity="0.5"
+            disable-tap>
+          </model-viewer>
+        </div>
+      </div>
+      <div class="column is-12-tablet is-4-desktop">
+        <div class="model-viewer-card">
+          <p class="has-text-centered is-size-7 has-text-grey mb-2">handCream.glb</p>
+          <model-viewer
+            class="dataset-glb-viewer"
+            src="static/glb/000080.glb"
+            alt="3D 模型 handCream"
+            camera-controls
+            auto-rotate
+            interaction-prompt="none"
+            exposure="1"
+            shadow-intensity="0.5"
+            disable-tap>
+          </model-viewer>
+        </div>
+      </div>
+      <div class="column is-12-tablet is-4-desktop">
+        <div class="model-viewer-card">
+          <p class="has-text-centered is-size-7 has-text-grey mb-2">示例：gluegun.glb</p>
+          <model-viewer
+            class="dataset-glb-viewer"
+            src="static/glb/gluegun.glb"
+            alt="3D 模型 gluegun"
+            camera-controls
+            auto-rotate
+            interaction-prompt="auto"
+            exposure="1"
+            shadow-intensity="0.5"
+            interaction-prompt-threshold="3000"
+            disable-tap>
+          </model-viewer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 3D object samples -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
