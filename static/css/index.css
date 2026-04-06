@@ -233,6 +233,41 @@ body {
   display: block;
 }
 
+/* Benchmark：论文表格截图。限制最大展示宽度，避免在宽屏上按容器拉满导致字显得过大 */
+.benchmark-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.benchmark-results-figure {
+  margin: 1.5rem auto;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  /* 约 640px；仍偏大可把 40rem 改为 36rem(576px) 或 32rem(512px) */
+  max-width: min(100%, 40rem);
+}
+
+/* 需要占满整栏宽（列很多的宽表）时，在 figure 上加 class：benchmark-results-figure is-full-width */
+.benchmark-results-figure.is-full-width {
+  max-width: 100%;
+}
+
+.benchmark-results-figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Wrist-mounted view：外层已用 container is-max-desktop（与 Overview 同宽），轮播不撑破容器 */
+.section-wrist-mounted-carousel .results-carousel {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .dataset-dynamic .hero-body {
   padding-top: 2rem;
   padding-bottom: 3rem;

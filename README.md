@@ -73,6 +73,18 @@ Create a 1200x630px social preview image at `static/images/social_preview.png`.
 - Replace the favicon in `static/images/`
 - Works with GitHub Pages
 
+### 本地 / 部署后「图片能显示、视频黑屏」时检查
+
+模板**不会**在别处单独注册视频路径：只要在 `index.html` 里改 `<source src="static/videos/你的文件.mp4">`，并把文件放到 **`WristHOI/static/videos/`**（与 `index.html` 的相对关系不变）即可。
+
+1. **不要用 `file://` 直接双击打开 `index.html` 调试视频**（部分浏览器对本地视频限制更严）。请在本目录启动本地服务，例如：  
+   `cd WristHOI && python -m http.server 8000`  
+   浏览器打开 `http://127.0.0.1:8000/`。
+2. **路径与文件名**：`src` 必须与磁盘上的文件名**完全一致**（含大小写）；说明文字里的文件名建议与 `<source>` 保持一致，避免误以为已替换成功。
+3. **编码**：浏览器对 MP4 最稳妥的是 **H.264 视频 + AAC 音频**（常用 yuv420p）。手机或剪辑导出的 **H.265/HEVC** 在 Chrome 中常无法播放。可用 ffmpeg 重编码：  
+   `ffmpeg -i input.mp4 -c:v libx264 -pix_fmt yuv420p -c:a aac output.mp4`
+4. **GitHub Pages**：大文件注意不要超仓库限制；若使用 Git LFS，需确认线上拉取的是真实视频而不是指针文件。
+
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
