@@ -83,6 +83,605 @@
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <style>
+    /* ── Page-wide typography & white layout (index01) ── */
+    .page-wristhoi {
+      --section-title: 1.625rem;
+      --subsection-title: 1.2rem;
+      --body-size: 1rem;
+      --lead-size: 0.9375rem;
+      --small-size: 0.875rem;
+      --text-body: #334155;
+      --text-muted: #64748b;
+    }
+
+    .page-wristhoi,
+    .page-wristhoi .hero,
+    .page-wristhoi .hero.is-light,
+    .page-wristhoi .section,
+    .page-wristhoi .footer,
+    .page-wristhoi .section-experiments,
+    .page-wristhoi .section-quality,
+    .page-wristhoi .section-examples,
+    .page-wristhoi .section-wrist-mounted-carousel .hero-body {
+      background: #ffffff !important;
+    }
+
+    .page-wristhoi main > .section,
+    .page-wristhoi main > section.section,
+    .page-wristhoi main > .hero.is-light {
+      border-top: 1px solid var(--border-color);
+    }
+
+    .page-wristhoi .hero:first-of-type {
+      border-top: none;
+    }
+
+    .page-wristhoi .publication-title {
+      font-size: 2.125rem !important;
+      line-height: 1.25 !important;
+      margin-bottom: 1.25rem !important;
+      font-weight: 700 !important;
+    }
+
+    .page-wristhoi .is-size-5.publication-authors {
+      font-size: 1.0625rem !important;
+      color: var(--text-body) !important;
+    }
+
+    .page-wristhoi .title.is-3 {
+      font-size: var(--section-title) !important;
+      font-weight: 700 !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 1rem !important;
+      padding-bottom: 0.65rem !important;
+    }
+
+  /* Section main headings (Overview, Examples, …): centered short underline */
+    .page-wristhoi .title.is-3::after {
+      content: none;
+    }
+
+    .page-wristhoi .section-intro .title.is-3 {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0 !important;
+      padding-bottom: 0.75rem !important;
+    }
+
+    .page-wristhoi .section-intro .title.is-3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2.5rem;
+      height: 2px;
+      background: var(--primary-color);
+      opacity: 0.85;
+      border-radius: 2px;
+    }
+
+    .page-wristhoi .title.is-4 {
+      font-size: var(--subsection-title) !important;
+      font-weight: 600 !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 0.85rem !important;
+    }
+
+    .page-wristhoi .subtitle.is-6,
+    .page-wristhoi .has-text-grey,
+    .page-wristhoi .is-size-7.has-text-grey {
+      color: var(--text-muted) !important;
+      font-size: var(--lead-size) !important;
+      line-height: 1.65 !important;
+    }
+
+    .page-wristhoi .content.has-text-justified {
+      font-size: var(--lead-size) !important;
+      line-height: 1.75 !important;
+      color: var(--text-body) !important;
+    }
+
+    .page-wristhoi .content.has-text-justified p {
+      margin-bottom: 1rem;
+    }
+
+    .page-wristhoi .content.is-size-6 {
+      font-size: var(--small-size) !important;
+      color: var(--text-muted) !important;
+      line-height: 1.6 !important;
+    }
+
+    .page-wristhoi .section {
+      padding: 3.25rem 1.5rem;
+    }
+
+    .page-wristhoi .hero-body {
+      padding: 2.75rem 1.5rem;
+    }
+
+    .page-wristhoi .section-intro {
+      margin-bottom: 1.75rem;
+    }
+
+    .page-wristhoi .section-intro:has(+ .section-lead) {
+      margin-bottom: 0.85rem;
+    }
+
+    .page-wristhoi .section-lead {
+      margin-bottom: 1.75rem;
+    }
+
+    .page-wristhoi .section-intro .subtitle.is-6,
+    .page-wristhoi .section-lead .subtitle.is-6 {
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .page-wristhoi .paper-table-title {
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-wristhoi .paper-table-subtitle {
+      font-size: var(--lead-size) !important;
+      color: var(--text-muted) !important;
+      line-height: 1.6;
+    }
+
+    .page-wristhoi .paper-table {
+      font-size: var(--small-size);
+    }
+
+    .page-wristhoi .paper-table.is-compact {
+      font-size: var(--small-size);
+    }
+
+    .page-wristhoi .paper-table thead th {
+      background: #fafafa;
+      font-size: var(--small-size);
+    }
+
+    .page-wristhoi .paper-table tbody tr.highlight-row td {
+      background: #f8fafc;
+    }
+
+    .page-wristhoi .results-carousel .subtitle {
+      font-size: var(--small-size) !important;
+      color: var(--text-muted) !important;
+    }
+
+    .page-wristhoi .footer {
+      border-top: 1px solid var(--border-color);
+    }
+
+    .page-wristhoi .publication-banner,
+    .page-wristhoi .dataset-overview-figure img {
+      box-shadow: var(--shadow-md);
+    }
+
+    .page-wristhoi .paper-table-scroll {
+      box-shadow: none;
+      border: 1px solid var(--border-color);
+    }
+
+    .page-wristhoi .quality-metric-panel,
+    .page-wristhoi .quality-summary-card {
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-wristhoi .publication-title {
+        font-size: 1.625rem !important;
+      }
+      .page-wristhoi .title.is-3 {
+        font-size: 1.375rem !important;
+      }
+      .page-wristhoi .title.is-4 {
+        font-size: 1.125rem !important;
+      }
+    }
+
+    .paper-table-block {
+      margin: 1.75rem auto;
+      max-width: 100%;
+    }
+    .paper-table-block.is-wide {
+      max-width: 100%;
+    }
+    .section-examples {
+      padding-top: 3.25rem;
+      padding-bottom: 1rem;
+      background: #ffffff;
+    }
+    .section-experiments {
+      padding-top: 3.25rem;
+      padding-bottom: 3.25rem;
+      background: #ffffff;
+    }
+    .section-examples .hero.is-small .title.is-4 {
+      margin-bottom: 1.25rem;
+    }
+    .section-examples .hero.is-small {
+      background: transparent;
+    }
+    .paper-table-title {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .paper-table-block:first-child .paper-table-title {
+      margin-top: 0.5rem;
+    }
+    .paper-table-subtitle {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      max-width: 52rem;
+    }
+    .paper-table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-md);
+      background: var(--background-primary);
+    }
+    .paper-table {
+      width: 100%;
+      border-collapse: collapse;
+      line-height: 1.45;
+      color: var(--text-primary);
+    }
+    .paper-table th,
+    .paper-table td {
+      padding: 0.45rem 0.55rem;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    .paper-table thead th {
+      font-weight: 600;
+      background: var(--background-secondary);
+      border-bottom-width: 2px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .paper-table thead th.group-header {
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .paper-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .paper-table tbody tr.highlight-row td {
+      font-weight: 600;
+      background: #f0f7ff;
+    }
+    .paper-table td.num,
+    .paper-table th.num {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .paper-table td.text-left,
+    .paper-table th.text-left {
+      text-align: left;
+    }
+    .paper-table .metric-dir {
+      font-weight: 400;
+      color: var(--text-secondary);
+      font-size: 0.85em;
+    }
+    .paper-table .best {
+      font-weight: 700;
+    }
+    .paper-table .setting-cell {
+      font-weight: 600;
+      vertical-align: middle;
+      background: var(--background-secondary);
+    }
+    .paper-table .divider-row td {
+      padding: 0;
+      height: 0;
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .cell-yes {
+      color: #16a34a;
+      font-weight: 700;
+    }
+    .cell-no {
+      color: #dc2626;
+      font-weight: 700;
+    }
+    .cell-na {
+      color: var(--text-light);
+    }
+    @media (max-width: 768px) {
+      .paper-table th,
+      .paper-table td {
+        padding: 0.35rem 0.4rem;
+      }
+    }
+
+    /* Annotation quality validation (web-native, no figure PNGs) */
+    .section-quality {
+      padding-top: 3.25rem;
+      padding-bottom: 3.25rem;
+      background: #ffffff;
+    }
+    .quality-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .quality-summary-card {
+      display: block;
+      width: 100%;
+      font-family: inherit;
+      background: var(--background-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+    }
+    .quality-summary-card:hover,
+    .quality-summary-card.is-active {
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .quality-summary-card.is-active {
+      background: #ffffff;
+      border-color: var(--primary-color);
+    }
+    .quality-summary-card .card-tag {
+      font-size: var(--small-size);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .quality-summary-card .card-tag.is-manual {
+      color: var(--text-body);
+    }
+    .quality-summary-card .card-title {
+      font-size: var(--lead-size);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.45rem;
+    }
+    .quality-summary-card .card-metric {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.25;
+      font-variant-numeric: tabular-nums;
+    }
+    .quality-summary-card .card-sub {
+      font-size: var(--small-size);
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .quality-summary-card .card-foot {
+      font-size: var(--small-size);
+      color: var(--text-muted);
+      margin-top: 0.45rem;
+    }
+    .quality-tab-groups {
+      margin-bottom: 1.25rem;
+    }
+    .quality-tab-group-label {
+      font-size: var(--small-size);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+    .quality-tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+    .quality-tab-btn {
+      appearance: none;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-body);
+      font-family: inherit;
+      font-size: var(--small-size);
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quality-tab-btn:hover {
+      border-color: #94a3b8;
+      color: var(--text-primary);
+    }
+    .quality-tab-btn.is-active {
+      background: var(--text-primary);
+      border-color: var(--text-primary);
+      color: #fff;
+    }
+    .quality-tab-panel {
+      display: none;
+    }
+    .quality-tab-panel.is-active {
+      display: block;
+      animation: qualityFadeIn 0.25s ease;
+    }
+    @keyframes qualityFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .quality-panel-method {
+      font-size: var(--lead-size);
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 1.25rem;
+      max-width: 52rem;
+    }
+    .quality-metric-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .quality-metric-panel {
+      background: var(--background-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .quality-metric-panel.is-dataset {
+      border-top: 2px solid var(--primary-color);
+    }
+    .quality-metric-panel.is-iaa {
+      border-top: 2px solid #94a3b8;
+    }
+    .quality-metric-panel.is-auto {
+      border-top: 2px solid #64748b;
+    }
+    .quality-metric-panel.is-na {
+      border-top: 2px solid var(--border-color);
+      opacity: 1;
+    }
+    .quality-panel-heading {
+      font-size: var(--small-size);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      color: var(--text-muted);
+    }
+    .quality-panel-heading.is-dataset,
+    .quality-panel-heading.is-iaa,
+    .quality-panel-heading.is-auto {
+      color: var(--text-muted);
+    }
+    .quality-metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+      font-size: var(--lead-size);
+    }
+    .quality-metric-row .label {
+      color: var(--text-muted);
+      flex: 1;
+    }
+    .quality-metric-row .value {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .quality-metric-row .value .dir {
+      font-weight: 400;
+      font-size: 0.8em;
+      color: var(--text-light);
+    }
+    .quality-progress {
+      margin-bottom: 0.75rem;
+    }
+    .quality-progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--small-size);
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .quality-progress-bar {
+      height: 7px;
+      background: var(--background-accent);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .quality-progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--primary-color);
+      opacity: 0.85;
+    }
+    .quality-progress-fill.is-iaa {
+      background: #64748b;
+      opacity: 0.75;
+    }
+    .quality-details {
+      margin-top: 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      background: var(--background-primary);
+      overflow: hidden;
+    }
+    .quality-details summary {
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      font-size: var(--lead-size);
+      font-weight: 600;
+      color: var(--text-primary);
+      background: #fafafa;
+      list-style: none;
+    }
+    .quality-details summary::-webkit-details-marker { display: none; }
+    .quality-details summary::after {
+      content: "+";
+      float: right;
+      font-weight: 400;
+      color: var(--text-light);
+    }
+    .quality-details[open] summary::after { content: "−"; }
+    .quality-details .paper-table-scroll {
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .quality-footnotes {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      font-size: var(--small-size);
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .quality-footnotes p { margin-bottom: 0.45rem; }
+    @media (max-width: 900px) {
+      .quality-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .quality-metric-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 520px) {
+      .quality-summary-grid {
+        grid-template-columns: 1fr;
+      }
+      .quality-tab-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+      }
+      .quality-tab-btn { flex-shrink: 0; }
+    }
+  </style>
   
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -181,8 +780,7 @@
   }
   </script>
 </head>
-<body>
-
+<body class="page-wristhoi">
 
 <!--  &lt;!&ndash; Scroll to Top Button &ndash;&gt;-->
 <!--  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">-->
@@ -340,10 +938,10 @@
 </section>
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section" id="abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-four-fifths section-intro">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -357,9 +955,11 @@
 <!-- End paper abstract -->
 
 <!-- Dataset overview (static framework figure) -->
-<section class="section dataset-overview">
+<section class="section dataset-overview" id="overview">
+  <div class="container is-max-desktop section-intro has-text-centered">
+    <h2 class="title is-3">Overview</h2>
+  </div>
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Overview</h2>
 <!--    <p class="subtitle is-6 has-text-centered has-text-grey">-->
 <!--      示例：此处为数据集框架示意（当前使用 static 内占位图，可自行替换）。-->
 <!--    </p>-->
@@ -372,7 +972,7 @@
         loading="lazy"
       />
     </figure>
-    <p class="content is-size-6 has-text-centered has-text-grey mt-3">
+    <p class="content is-size-6 has-text-centered mt-3">
       Figure 1: Overview of WristHOI. (Left) Comparison with
               existing egocentric and allocentric HOI datasets. (Right) Example of a hand–object interaction sequence with annotated
               temporal phase
@@ -382,6 +982,8 @@
 
 </section>
 <!-- End dataset overview -->
+
+
 
 <!--&lt;!&ndash; Dynamic highlights (video / motion) &ndash;&gt;-->
 <!--<section class="section hero is-light dataset-dynamic">-->
@@ -413,11 +1015,22 @@
 <!--  </div>-->
 <!--</section>-->
 
+<!-- Examples: sample sequences -->
+<section class="section section-examples" id="examples">
+  <div class="container is-max-desktop section-intro has-text-centered">
+    <h2 class="title is-3">Examples</h2>
+  </div>
+  <div class="container is-max-desktop section-lead has-text-centered">
+    <p class="subtitle is-6">
+      Representative interaction sequences captured from wrist-mounted and fixed allocentric viewpoints.
+    </p>
+  </div>
+
 <!-- Video carousel, wrist view -->
 <section class="hero is-small section-wrist-mounted-carousel">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Wrist-mounted view Examples</h2>
+      <h2 class="title is-4 has-text-centered">Wrist-mounted View</h2>
 <!--      <p class="subtitle is-6 has-text-centered has-text-grey mb-4">-->
 <!--        示例：5段本地视频 + 对应封面图（static 内素材）。-->
 <!--      </p>-->
@@ -456,14 +1069,12 @@
     </div>
   </div>
 </section>
-<!-- End dynamic highlights -->
 
-
-<!-- Video carousel fix camera view -->
+<!-- Fixed-view examples -->
 <section class="hero is-small section-wrist-mounted-carousel">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Fixed-view(Allocentric) Examples</h2>
+      <h2 class="title is-4 has-text-centered">Fixed-view (Allocentric)</h2>
 <!--      <p class="subtitle is-6 has-text-centered has-text-grey mb-4">-->
 <!--        示例：5段本地视频 + 对应封面图（static 内素材）。-->
 <!--      </p>-->
@@ -495,58 +1106,830 @@
       </div>
     </div>
   </div>
-
-      <div class="container is-max-desktop">
-    <figure class="publication-banner dataset-overview-figure">
-      <img
-        src="static/images/table1.png"
-        alt="Figure 1: Overview of WristHOI. (Left) Comparison with
-              existing egocentric and allocentric HOI datasets. (Right) Example of a hand–object interaction sequence with annotated
-              temporal phase"
-        loading="lazy"
-      />
-    </figure>
-  </div>
 </section>
-<!-- End dynamic highlights -->
+<!-- End fixed-view examples -->
 
-<!-- Benchmark results (paper tables: replace static/images/benchmark_table.png and caption text) -->
-<section class="section dataset-overview benchmark-results" id="benchmark">
+</section>
+<!-- End examples -->
+
+<!-- Annotation quality validation (web-native) -->
+<section class="section section-quality" id="quality-validation">
+  <div class="container is-max-desktop section-intro has-text-centered">
+    <h2 class="title is-3">Annotation Quality Validation</h2>
+  </div>
+  <div class="container is-max-desktop section-lead has-text-centered">
+    <p class="subtitle is-6">
+      Six-dimensional reliability evaluation on large-scale subsets. We report automatic-label accuracy against a
+      <strong>three-annotator fused manual ground truth (GT)</strong>, alongside inter-annotator agreement (IAA).
+      Automatic geometric checks (depth, penetration, temporal states) run on full p007+p008 sequences.
+    </p>
+  </div>
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Benchmark Results</h2>
-<!--    <p class="subtitle is-6 has-text-centered has-text-grey mb-4">-->
-<!--      Main quantitative results on WristHOI for pose estimation, contact prediction, and temporal interaction understanding (see paper for full tables and metrics).-->
-<!--    </p>-->
-    <div class="benchmark-table-wrap">
-      <figure class="benchmark-results-figure">
-        <img
-          src="static/images/table2.png"
-          alt="WristHOI benchmark: main results table from the paper"
-          loading="lazy"
-        />
-      </figure>
-            <figure class="benchmark-results-figure">
-        <img
-          src="static/images/table3.png"
-          alt="WristHOI benchmark: main results table from the paper"
-          loading="lazy"
-        />
-      </figure>
-            <figure class="benchmark-results-figure">
-        <img
-          src="static/images/table4.png"
-          alt="WristHOI benchmark: main results table from the paper"
-          loading="lazy"
-        />
-      </figure>
+    <div class="quality-summary-grid" role="tablist" aria-label="Quality validation axes">
+      <button type="button" class="quality-summary-card is-active" data-quality-tab="qv-2d" aria-selected="true">
+        <div class="card-tag is-manual">Manual</div>
+        <div class="card-title">2D Hand Pose</div>
+        <div class="card-metric">97.4%</div>
+        <div class="card-sub">PCK@0.1 vs. fused GT</div>
+        <div class="card-foot">1,744 frames</div>
+      </button>
+      <button type="button" class="quality-summary-card" data-quality-tab="qv-3d">
+        <div class="card-tag is-manual">Manual</div>
+        <div class="card-title">3D Hand Pose</div>
+        <div class="card-metric">2.30 mm</div>
+        <div class="card-sub">96.1% PCK@10mm</div>
+        <div class="card-foot">1,744 frames × 2 views</div>
+      </button>
+      <button type="button" class="quality-summary-card" data-quality-tab="qv-contact">
+        <div class="card-tag is-manual">Manual</div>
+        <div class="card-title">Contact Labels</div>
+        <div class="card-metric">IoU 0.88</div>
+        <div class="card-sub">F1 0.93 · Prec. 0.96</div>
+        <div class="card-foot">1,260 frames</div>
+      </button>
+      <button type="button" class="quality-summary-card" data-quality-tab="qv-depth">
+        <div class="card-tag">Automatic</div>
+        <div class="card-title">Object Depth</div>
+        <div class="card-metric">4.44 mm</div>
+        <div class="card-sub">91.4% below 10mm</div>
+        <div class="card-foot">5,014 frames</div>
+      </button>
+      <button type="button" class="quality-summary-card" data-quality-tab="qv-penetration">
+        <div class="card-tag">Automatic</div>
+        <div class="card-title">Penetration</div>
+        <div class="card-metric">4.9 mm</div>
+        <div class="card-sub">83.2% below 10mm</div>
+        <div class="card-foot">5,733 frames</div>
+      </button>
+      <button type="button" class="quality-summary-card" data-quality-tab="qv-temporal">
+        <div class="card-tag">Automatic</div>
+        <div class="card-title">Temporal States</div>
+        <div class="card-metric">0.12 mm</div>
+        <div class="card-sub">In-Contact median</div>
+        <div class="card-foot">Full sequences</div>
+      </button>
     </div>
-    <!-- 将下方说明改为与论文一致的表题/脚注；图片放入 static/images/benchmark_table.png（可多张图则复制整块 figure） -->
-<!--    <p class="content is-size-6 has-text-centered has-text-grey mt-4">-->
-<!--      <strong>Table.</strong> Main benchmark results on WristHOI (quantitative comparison and metrics definitions follow the paper).-->
-<!--    </p>-->
+
+    <div class="quality-tab-groups">
+      <p class="quality-tab-group-label">Manual annotation vs. dataset</p>
+      <div class="quality-tab-nav">
+        <button type="button" class="quality-tab-btn is-active" data-quality-tab="qv-2d">2D Hand</button>
+        <button type="button" class="quality-tab-btn" data-quality-tab="qv-3d">3D Hand</button>
+        <button type="button" class="quality-tab-btn" data-quality-tab="qv-contact">Contact</button>
+      </div>
+      <p class="quality-tab-group-label">Automatic geometric checks</p>
+      <div class="quality-tab-nav">
+        <button type="button" class="quality-tab-btn" data-quality-tab="qv-depth">Depth</button>
+        <button type="button" class="quality-tab-btn" data-quality-tab="qv-penetration">Penetration</button>
+        <button type="button" class="quality-tab-btn" data-quality-tab="qv-temporal">Temporal</button>
+      </div>
+    </div>
+
+    <!-- Tab: 2D Hand -->
+    <div id="qv-2d" class="quality-tab-panel is-active" role="tabpanel">
+      <p class="quality-panel-method">
+        Three-annotator fused manual 2D keypoints (21 MediaPipe joints on cam09) are compared against released MANO reprojections.
+        PCK is normalized by wrist-to-middle-MCP distance. Evaluated on <strong>1,744 frames</strong>.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-dataset">
+          <div class="quality-panel-heading is-dataset">vs fused manual GT</div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>PCK@0.1</span><span>97.4%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill" style="width:97.4%"></div></div>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Frames</span>
+            <span class="value">1,744</span>
+          </div>
+        </div>
+        <div class="quality-metric-panel is-iaa">
+          <div class="quality-panel-heading is-iaa">Inter-annotator agreement</div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>PCK@0.1</span><span>94.3%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill is-iaa" style="width:94.3%"></div></div>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">NME</span>
+            <span class="value">0.015 <span class="dir">↓</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: 3D Hand -->
+    <div id="qv-3d" class="quality-tab-panel" role="tabpanel" hidden>
+      <p class="quality-panel-method">
+        Dual-view manual annotation (cam09 + cam07; <strong>1,744 frames × 2 views</strong>) with DLT triangulation,
+        compared against released <code>keypoints3d</code> using three-annotator fused manual GT.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-dataset">
+          <div class="quality-panel-heading is-dataset">vs fused manual GT</div>
+          <div class="quality-metric-row">
+            <span class="label">MPJPE</span>
+            <span class="value">2.30 mm <span class="dir">↓</span></span>
+          </div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>PCK@10mm</span><span>96.1%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill" style="width:96.1%"></div></div>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Frames</span>
+            <span class="value">1,744 × 2 views</span>
+          </div>
+        </div>
+        <div class="quality-metric-panel is-iaa">
+          <div class="quality-panel-heading is-iaa">Inter-annotator agreement</div>
+          <div class="quality-metric-row">
+            <span class="label">MPJPE</span>
+            <span class="value">1.63 mm <span class="dir">↓</span></span>
+          </div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>PCK@10mm</span><span>97.7%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill is-iaa" style="width:97.7%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Contact -->
+    <div id="qv-contact" class="quality-tab-panel" role="tabpanel" hidden>
+      <p class="quality-panel-method">
+        Three-annotator fused manual contact labels (778 MANO vertices) are compared against dataset automatic
+        <code>contact_label</code> on <strong>1,260 frames</strong>.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-dataset">
+          <div class="quality-panel-heading is-dataset">vs fused manual GT</div>
+          <div class="quality-metric-row">
+            <span class="label">Vertex IoU</span>
+            <span class="value">0.88 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Vertex F1</span>
+            <span class="value">0.93 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Precision</span>
+            <span class="value">0.96 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Recall</span>
+            <span class="value">0.91 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Frames</span>
+            <span class="value">1,260</span>
+          </div>
+        </div>
+        <div class="quality-metric-panel is-iaa">
+          <div class="quality-panel-heading is-iaa">Inter-annotator agreement</div>
+          <div class="quality-metric-row">
+            <span class="label">Vertex IoU</span>
+            <span class="value">0.74 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Tolerant F1 @10mm</span>
+            <span class="value">0.88 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Finger6 IoU</span>
+            <span class="value">0.93 <span class="dir">↑</span></span>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Chamfer surface distance</span>
+            <span class="value">6.1 mm <span class="dir">↓</span></span>
+          </div>
+        </div>
+      </div>
+      <details class="quality-details">
+        <summary>Contact distance threshold sensitivity (τ = 1–5 mm)</summary>
+        <p class="quality-panel-method" style="margin: 1rem 1rem 0.75rem;">
+          WristHOI marks a MANO vertex as <em>in contact</em> when its hand–object distance falls below an
+          <strong>on-threshold τ</strong> (baseline <strong>τ = 4 mm</strong>, with hysteresis in the released pipeline).
+          Using cached per-vertex distances, we re-run the same classification logic at τ ∈ {1, 2, 3, 4, 5} mm and report:
+          <strong>Contact ratio</strong> — the average fraction of hand vertices labeled in contact;
+          <strong>Flip rate</strong> — the fraction of frames whose contact labeling differs from the τ = 4 mm baseline.
+          Flip rates stay low near the baseline (e.g. 2.9% at τ = 3, 3.2% at τ = 5), indicating stable automatic contact labels.
+          This is <em>not</em> a per-state breakdown; see the <strong>Temporal</strong> tab for how the four interaction states separate in distance.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+            <thead>
+              <tr>
+                <th class="text-left">On-threshold τ (mm)</th>
+                <th class="num">Baseline</th>
+                <th class="num">Contact vertex ratio</th>
+                <th class="num">Flip rate vs τ = 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-left">1</td><td class="num">—</td><td class="num">13.9%</td><td class="num">12.1%</td></tr>
+              <tr><td class="text-left">2</td><td class="num">—</td><td class="num">17.7%</td><td class="num">5.4%</td></tr>
+              <tr><td class="text-left">3</td><td class="num">—</td><td class="num">19.3%</td><td class="num">2.9%</td></tr>
+              <tr class="highlight-row"><td class="text-left">4</td><td class="num">✓</td><td class="num best">20.5%</td><td class="num">0</td></tr>
+              <tr><td class="text-left">5</td><td class="num">—</td><td class="num">21.6%</td><td class="num">3.2%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <!-- Tab: Depth -->
+    <div id="qv-depth" class="quality-tab-panel" role="tabpanel" hidden>
+      <p class="quality-panel-method">
+        Depth-map samples are back-projected and measured against the object mesh surface (mean point-to-mesh error).
+        Fully automatic evaluation on p007+p008, <strong>5,014 frames</strong>.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-auto">
+          <div class="quality-panel-heading is-auto">Automatic check</div>
+          <div class="quality-metric-row">
+            <span class="label">Mean point-to-mesh error</span>
+            <span class="value">4.44 mm <span class="dir">↓</span></span>
+          </div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>Below 10mm</span><span>91.4%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill" style="width:91.4%"></div></div>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Frames</span>
+            <span class="value">5,014</span>
+          </div>
+        </div>
+        <div class="quality-metric-panel is-na">
+          <div class="quality-panel-heading">Inter-annotator agreement</div>
+          <p class="is-size-7 has-text-grey mt-2">Not applicable — this axis uses fully automatic geometric verification without manual ground truth.</p>
+        </div>
+      </div>
+      <details class="quality-details">
+        <summary>Breakdown by grasp</summary>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+            <thead>
+              <tr>
+                <th class="text-left">Grasp</th>
+                <th class="num">Frames</th>
+                <th class="num">Mean ↓ (mm)</th>
+                <th class="num">Median ↓ (mm)</th>
+                <th class="num">Inlier@10mm ↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row"><td class="text-left">Overall</td><td class="num">5,014</td><td class="num best">4.44</td><td class="num">5.15</td><td class="num best">91.4%</td></tr>
+              <tr><td class="text-left">g2</td><td class="num">1,680</td><td class="num">3.84</td><td class="num">4.42</td><td class="num">92.8%</td></tr>
+              <tr><td class="text-left">g3</td><td class="num">1,668</td><td class="num">4.07</td><td class="num">4.08</td><td class="num">92.0%</td></tr>
+              <tr><td class="text-left">g5</td><td class="num">1,666</td><td class="num">5.47</td><td class="num">6.95</td><td class="num">89.2%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <!-- Tab: Penetration -->
+    <div id="qv-penetration" class="quality-tab-panel" role="tabpanel" hidden>
+      <p class="quality-panel-method">
+        Signed distance from MANO hand vertices to the object mesh (negative = interpenetration).
+        Evaluated on Contact-Start + In-Contact frames, <strong>5,733 frames</strong>.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-auto">
+          <div class="quality-panel-heading is-auto">Automatic check</div>
+          <div class="quality-metric-row">
+            <span class="label">Average max penetration</span>
+            <span class="value">4.9 mm <span class="dir">↓</span></span>
+          </div>
+          <div class="quality-progress">
+            <div class="quality-progress-header"><span>Below 10mm</span><span>83.2%</span></div>
+            <div class="quality-progress-bar"><div class="quality-progress-fill" style="width:83.2%"></div></div>
+          </div>
+          <div class="quality-metric-row">
+            <span class="label">Frames</span>
+            <span class="value">5,733</span>
+          </div>
+        </div>
+        <div class="quality-metric-panel is-na">
+          <div class="quality-panel-heading">Inter-annotator agreement</div>
+          <p class="is-size-7 has-text-grey mt-2">Not applicable — penetration is computed automatically from released meshes and poses.</p>
+        </div>
+      </div>
+      <details class="quality-details">
+        <summary>Breakdown by state and grasp</summary>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+            <thead>
+              <tr>
+                <th class="text-left">Group</th>
+                <th class="num">Frames</th>
+                <th class="num">Median max pen. ↓</th>
+                <th class="num">&lt;5mm ↑</th>
+                <th class="num">&lt;10mm ↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row"><td class="text-left">Overall</td><td class="num">5,733</td><td class="num best">3.45 mm</td><td class="num">62.0%</td><td class="num best">83.2%</td></tr>
+              <tr><td class="text-left">In-Contact</td><td class="num">5,061</td><td class="num">3.88 mm</td><td class="num">58.7%</td><td class="num">81.5%</td></tr>
+              <tr><td class="text-left">Contact-Start</td><td class="num">672</td><td class="num">0.38 mm</td><td class="num">86.6%</td><td class="num">95.8%</td></tr>
+              <tr><td class="text-left">g2</td><td class="num">1,864</td><td class="num">3.50 mm</td><td class="num">62.8%</td><td class="num">87.0%</td></tr>
+              <tr><td class="text-left">g3</td><td class="num">1,923</td><td class="num">3.22 mm</td><td class="num">62.7%</td><td class="num">83.4%</td></tr>
+              <tr><td class="text-left">g5</td><td class="num">1,946</td><td class="num">3.69 mm</td><td class="num">60.5%</td><td class="num">79.3%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <!-- Tab: Temporal -->
+    <div id="qv-temporal" class="quality-tab-panel" role="tabpanel" hidden>
+      <p class="quality-panel-method">
+        Per-frame minimum hand–object distance from <code>contact_sequence.json</code>, grouped by the four
+        released temporal states (Approach / Contact-Start / In-Contact / Release). Mesh-free automatic check on
+        full p007+p008 sequences. These states are derived from per-vertex contact distances with threshold
+        τ = 4 mm; see the <strong>Contact</strong> tab for how labels change when τ is varied.
+      </p>
+      <div class="quality-metric-columns">
+        <div class="quality-metric-panel is-auto" style="grid-column: 1 / -1;">
+          <div class="quality-panel-heading is-auto">Distance by temporal state</div>
+          <div class="paper-table-scroll" style="box-shadow:none;">
+            <table class="paper-table is-compact">
+              <thead>
+                <tr>
+                  <th class="text-left">State</th>
+                  <th class="num">N frames</th>
+                  <th class="num">Mean (mm)</th>
+                  <th class="num">Median (mm)</th>
+                  <th class="num">P95 (mm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="text-left">Approach</td><td class="num">19,323</td><td class="num">98.38</td><td class="num">89.67</td><td class="num">218.91</td></tr>
+                <tr><td class="text-left">Contact-Start</td><td class="num">919</td><td class="num">1.36</td><td class="num">0.44</td><td class="num">4.91</td></tr>
+                <tr class="highlight-row"><td class="text-left">In-Contact</td><td class="num">9,089</td><td class="num">0.74</td><td class="num best">0.12</td><td class="num">4.68</td></tr>
+                <tr><td class="text-left">Release</td><td class="num">13,002</td><td class="num">100.23</td><td class="num">94.56</td><td class="num">220.03</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="is-size-7 has-text-grey mt-3 mb-0">
+            Four states are monotonically separated: In-Contact median <strong>0.12&nbsp;mm</strong> vs.
+            about <strong>90&nbsp;mm</strong> in Approach and Release (full p007+p008 sequences).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quality-footnotes">
+      <p>Manual validation uses <strong>three-annotator fused ground truth</strong> on large-scale subsets:
+        2D and 3D hand pose on <strong>1,744 frames</strong> (3D: dual-view, 1,744&nbsp;×&nbsp;2);
+        contact labels on <strong>1,260 frames</strong>.</p>
+      <p>Automatic checks (object depth, penetration, temporal states) use full p007+p008 sequences
+        (5,014 / 5,733 / full-sequence frame counts, respectively).</p>
+      <p class="mt-3">
+        These results provide quantitative evidence supporting the reliability of WristHOI annotations.
+        Contact labels are validated through complementary evaluations of hand pose accuracy, object pose quality,
+        geometric consistency, physical plausibility, temporal state separation, and manual verification.
+      </p>
+    </div>
   </div>
 </section>
-<!-- End benchmark results -->
+<!-- End annotation quality validation -->
+
+<!-- Experimental results -->
+<section class="section section-experiments benchmark-results" id="benchmark">
+  <div class="container is-max-desktop section-intro has-text-centered">
+    <h2 class="title is-3">Experimental Results</h2>
+  </div>
+  <div class="container is-max-desktop section-lead has-text-centered">
+    <p class="subtitle is-6">
+      Quantitative comparisons on WristHOI for dataset characteristics, pose estimation, contact prediction, and temporal localization.
+    </p>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="benchmark-table-wrap">
+
+      <div class="paper-table-block is-wide" id="table-dataset-comparison">
+        <h3 class="title is-4 paper-table-title">Comparison with Representative HOI Datasets</h3>
+        <p class="paper-table-subtitle">
+          WristHOI compared with existing hand–object interaction datasets in terms of observation setup, annotation scope, and dataset scale.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+          <thead>
+            <tr>
+              <th class="text-left" rowspan="2">Dataset</th>
+              <th class="group-header" colspan="5">Observation Setup</th>
+              <th class="group-header" colspan="5">Annotations</th>
+              <th class="group-header" colspan="3">Statistics</th>
+            </tr>
+            <tr>
+              <th class="num">Ego.</th>
+              <th class="num">Wrist</th>
+              <th class="num">Allo.</th>
+              <th class="num">Type</th>
+              <th class="num">Res.</th>
+              <th class="num">Hand</th>
+              <th class="num">Obj.</th>
+              <th class="num">Contact</th>
+              <th class="num">Text</th>
+              <th class="num">Method</th>
+              <th class="num">Subjects</th>
+              <th class="num">Objects</th>
+              <th class="num">Frames</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">DexYCB [7]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">10</td>
+              <td class="num">20</td>
+              <td class="num">582K</td>
+            </tr>
+            <tr>
+              <td class="text-left">ContactPose [4]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1920×1080</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Marker</td>
+              <td class="num">50</td>
+              <td class="num">25</td>
+              <td class="num">2.9M</td>
+            </tr>
+            <tr>
+              <td class="text-left">ARCTIC [15]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB</td>
+              <td class="num">2800×2000</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">MoCap</td>
+              <td class="num">10</td>
+              <td class="num">11</td>
+              <td class="num">2.1M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HOI4D [44]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1280×800</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">4</td>
+              <td class="num">800</td>
+              <td class="num">2.4M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HOT3D [1]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1408×1408</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">19</td>
+              <td class="num">33</td>
+              <td class="num">3.7M</td>
+            </tr>
+            <tr>
+              <td class="text-left">OakInk2 [45]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">848×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">9</td>
+              <td class="num">75</td>
+              <td class="num">4.0M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HO3D [18]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Automatic</td>
+              <td class="num">10</td>
+              <td class="num">10</td>
+              <td class="num">103K</td>
+            </tr>
+            <tr>
+              <td class="text-left">H2O [34]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1280×720</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">4</td>
+              <td class="num">8</td>
+              <td class="num">571K</td>
+            </tr>
+            <tr>
+              <td class="text-left">Hoi! [13]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Automatic</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+              <td class="num">381</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td class="text-left">WristHOI (Ours)</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">10</td>
+              <td class="num">14</td>
+              <td class="num">1.45M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <div class="paper-table-block">
+        <h3 class="title is-4 paper-table-title">Hand Pose Estimation Performance</h3>
+        <p class="paper-table-subtitle">
+          Comparison between fixed-view methods and our wrist-view configurations on the test split.
+          Errors are reported in millimeters (mm). Bold indicates the best overall performance.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table">
+            <thead>
+              <tr>
+                <th class="text-left">Setting</th>
+                <th class="text-left">Method</th>
+                <th class="num">MPJPE <span class="metric-dir">↓</span></th>
+                <th class="num">PA-MPJPE <span class="metric-dir">↓</span></th>
+                <th class="num">Mesh Err. <span class="metric-dir">↓</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="4">Fixed-view</td>
+                <td class="text-left">HandOccNet</td>
+                <td class="num">25.41</td>
+                <td class="num">19.62</td>
+                <td class="num">24.50</td>
+              </tr>
+              <tr>
+                <td class="text-left">SemiHand</td>
+                <td class="num">23.19</td>
+                <td class="num">18.57</td>
+                <td class="num">22.37</td>
+              </tr>
+              <tr>
+                <td class="text-left">SimpleHand</td>
+                <td class="num">21.79</td>
+                <td class="num">17.82</td>
+                <td class="num">20.94</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR</td>
+                <td class="num">—</td>
+                <td class="num best">14.20</td>
+                <td class="num">—</td>
+              </tr>
+              <tr class="divider-row"><td colspan="5"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">Wrist-view</td>
+                <td class="text-left">HaMeR (Dorsal)</td>
+                <td class="num">—</td>
+                <td class="num">13.83</td>
+                <td class="num">14.28</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR (Palmar)</td>
+                <td class="num">—</td>
+                <td class="num">13.69</td>
+                <td class="num">14.24</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR (Dual-wrist)</td>
+                <td class="num">—</td>
+                <td class="num best">13.45</td>
+                <td class="num best">13.73</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Contact prediction -->
+      <div class="paper-table-block">
+        <h3 class="title is-4 paper-table-title">Contact Prediction Results</h3>
+        <p class="paper-table-subtitle">
+          Performance of HACO under single-view inputs and dual-wrist fusion ablations. Early fusion corresponds to the
+          <strong>Dual-wrist</strong> baseline; gated fusion yields the best overall contact prediction. Bold indicates the best result per column.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table">
+            <thead>
+              <tr>
+                <th class="text-left">Setting</th>
+                <th class="text-left">Input / Fusion</th>
+                <th class="num">Contact F1 <span class="metric-dir">↑</span></th>
+                <th class="num">Precision <span class="metric-dir">↑</span></th>
+                <th class="num">Recall <span class="metric-dir">↑</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">Single-view</td>
+                <td class="text-left">Fixed-only</td>
+                <td class="num">0.486</td>
+                <td class="num">0.427</td>
+                <td class="num">0.682</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.477</td>
+                <td class="num">0.409</td>
+                <td class="num">0.684</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar-only</td>
+                <td class="num">0.597</td>
+                <td class="num">0.523</td>
+                <td class="num">0.753</td>
+              </tr>
+              <tr class="divider-row"><td colspan="5"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="4">Dual fusion</td>
+                <td class="text-left">Early fusion</td>
+                <td class="num">0.498</td>
+                <td class="num">0.419</td>
+                <td class="num">0.700</td>
+              </tr>
+              <tr>
+                <td class="text-left">Late-add</td>
+                <td class="num">0.527</td>
+                <td class="num">0.470</td>
+                <td class="num">0.692</td>
+              </tr>
+              <tr>
+                <td class="text-left">Late-cat-proj</td>
+                <td class="num">0.489</td>
+                <td class="num">0.398</td>
+                <td class="num">0.743</td>
+              </tr>
+              <tr>
+                <td class="text-left">Gated fusion</td>
+                <td class="num best">0.619</td>
+                <td class="num best">0.532</td>
+                <td class="num best">0.765</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Text-guided temporal localization -->
+      <div class="paper-table-block is-wide">
+        <h3 class="title is-4 paper-table-title">Text-guided Temporal Localization</h3>
+        <p class="paper-table-subtitle">
+          ZS: zero-shot; TH: trainable head. S.Err and E.Err denote the absolute errors of the predicted start and end boundaries, respectively.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+            <thead>
+              <tr>
+                <th class="text-left" rowspan="2">Model</th>
+                <th class="text-left" rowspan="2">Input</th>
+                <th class="num" colspan="4">Acc.</th>
+                <th class="num" colspan="2">Temp. Err.</th>
+              </tr>
+              <tr>
+                <th class="num">R1@0.3 <span class="metric-dir">↑</span></th>
+                <th class="num">R1@0.5 <span class="metric-dir">↑</span></th>
+                <th class="num">R1@0.7 <span class="metric-dir">↑</span></th>
+                <th class="num">mIoU <span class="metric-dir">↑</span></th>
+                <th class="num">S.Err <span class="metric-dir">↓</span></th>
+                <th class="num">E.Err <span class="metric-dir">↓</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">CLIP-ZS</td>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.027</td>
+                <td class="num">0.015</td>
+                <td class="num">0.001</td>
+                <td class="num">0.046</td>
+                <td class="num">42.358</td>
+                <td class="num">44.636</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar</td>
+                <td class="num best">0.071</td>
+                <td class="num best">0.035</td>
+                <td class="num best">0.014</td>
+                <td class="num best">0.074</td>
+                <td class="num best">39.306</td>
+                <td class="num">44.357</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dual</td>
+                <td class="num">0.048</td>
+                <td class="num">0.022</td>
+                <td class="num">0.004</td>
+                <td class="num">0.054</td>
+                <td class="num">39.350</td>
+                <td class="num best">42.623</td>
+              </tr>
+              <tr class="divider-row"><td colspan="8"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">CLIP-TH</td>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.461</td>
+                <td class="num">0.331</td>
+                <td class="num">0.171</td>
+                <td class="num">0.313</td>
+                <td class="num">24.815</td>
+                <td class="num">32.260</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar</td>
+                <td class="num">0.549</td>
+                <td class="num">0.424</td>
+                <td class="num">0.250</td>
+                <td class="num">0.384</td>
+                <td class="num">20.907</td>
+                <td class="num">27.134</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dual</td>
+                <td class="num best">0.572</td>
+                <td class="num best">0.446</td>
+                <td class="num best">0.280</td>
+                <td class="num best">0.408</td>
+                <td class="num best">20.785</td>
+                <td class="num best">26.561</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End experimental results -->
 
 <!-- Acknowledgments -->
 <section class="section dataset-overview" id="acknowledgments">
@@ -757,6 +2140,41 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+
+  <script>
+    (function () {
+      var tabIds = ["qv-2d", "qv-3d", "qv-contact", "qv-depth", "qv-penetration", "qv-temporal"];
+
+      function activateQualityTab(tabId) {
+        tabIds.forEach(function (id) {
+          var panel = document.getElementById(id);
+          if (panel) {
+            var active = id === tabId;
+            panel.classList.toggle("is-active", active);
+            panel.hidden = !active;
+          }
+        });
+        document.querySelectorAll(".quality-tab-btn").forEach(function (btn) {
+          var active = btn.getAttribute("data-quality-tab") === tabId;
+          btn.classList.toggle("is-active", active);
+          btn.setAttribute("aria-selected", active ? "true" : "false");
+        });
+        document.querySelectorAll(".quality-summary-card").forEach(function (card) {
+          var active = card.getAttribute("data-quality-tab") === tabId;
+          card.classList.toggle("is-active", active);
+          card.setAttribute("aria-selected", active ? "true" : "false");
+        });
+      }
+
+      document.querySelectorAll("[data-quality-tab]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          activateQualityTab(el.getAttribute("data-quality-tab"));
+        });
+      });
+
+      activateQualityTab("qv-2d");
+    })();
+  </script>
 
   </body>
   </html>
