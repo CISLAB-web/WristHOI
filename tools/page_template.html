@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction · WACV 2027</title>
+  <meta name="description" content="WristHOI is a dual wrist-mounted RGB-D dataset for contact-aware hand-object interaction: 1,260 sequences, 1.45M frames, 10 subjects, 14 objects, with hand-object poses, dense contact and temporal interaction states. WACV 2027.">
+  <meta name="keywords" content="hand-object interaction, wrist-mounted camera, contact, dataset, MANO, 3D hand pose, WACV">
+  <meta name="author" content="Xin Chu, Junghoon Sung, Changho Kim, Seongwhan Cho, Eunjee Choi, JongHa Lee, Younggeun Choi">
+  <meta name="theme-color" content="#0b0d12">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CISLAB · Dankook University">
+  <meta property="og:title" content="WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction (WACV 2027)">
+  <meta property="og:description" content="Dual wrist-mounted RGB-D views of the last mile of hand-object interaction: 1,260 sequences, 1.45M frames, dense contact and temporal interaction states.">
+  <meta property="og:url" content="https://cislab-web.github.io/WristHOI/">
+  <meta property="og:image" content="https://cislab-web.github.io/WristHOI/static/images/v2/social.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WristHOI (WACV 2027)">
+  <meta name="twitter:description" content="A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction">
+  <meta name="twitter:image" content="https://cislab-web.github.io/WristHOI/static/images/v2/social.jpg">
+
+  <meta name="citation_title" content="WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction">
+  <meta name="citation_author" content="Chu, Xin">
+  <meta name="citation_author" content="Sung, Junghoon">
+  <meta name="citation_author" content="Kim, Changho">
+  <meta name="citation_author" content="Cho, Seongwhan">
+  <meta name="citation_author" content="Choi, Eunjee">
+  <meta name="citation_author" content="Lee, JongHa">
+  <meta name="citation_author" content="Choi, Younggeun">
+  <meta name="citation_publication_date" content="2027">
+  <meta name="citation_conference_title" content="IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)">
+
+  <link rel="icon" type="image/png" href="static/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/wristhoi.css">
+</head>
+<body>
+
+<!-- ============================== top nav ============================== -->
+<nav class="topnav" id="topnav" aria-label="Sections">
+  <div class="topnav-inner">
+    <a class="brand" href="#top">WristHOI <span class="brand-venue">WACV 2027</span></a>
+    <div class="topnav-links">
+      <a href="#video">Video</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#localization">Wrist cameras</a>
+      <a href="#quality">Quality</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== hero ============================== -->
+<header class="hero" id="top">
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="static/images/v2/hero_wall.jpg" aria-hidden="true">
+    <source src="static/videos/v2/hero_wall.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <div class="venue-pill"><span class="dot"></span>WACV 2027</div>
+    <h1 class="hero-title"><span class="grad">WristHOI</span></h1>
+    <p class="hero-subtitle">A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction</p>
+    <p class="authors">
+      <span>Xin Chu</span><span>Junghoon Sung</span><span>Changho Kim</span><span>Seongwhan Cho</span><span>Eunjee Choi</span><span>JongHa Lee</span><span>Younggeun Choi<sup>*</sup></span>
+    </p>
+    <p class="affil">Dankook University <span class="sep">·</span> <sup>*</sup>Corresponding author</p>
+    <div class="hero-buttons">
+      <a class="btn btn-light" href="https://github.com/CISLAB-web/WristHOI-v1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Code
+      </a>
+      <a class="btn btn-light" href="https://github.com/CISLAB-web/WristHOI-v1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C7 2 3 3.8 3 6v12c0 2.2 4 4 9 4s9-1.8 9-4V6c0-2.2-4-4-9-4zm0 2c4.4 0 7 1.5 7 2s-2.6 2-7 2-7-1.5-7-2 2.6-2 7-2zM5 8.7C6.7 9.5 9.2 10 12 10s5.3-.5 7-1.3V12c0 .5-2.6 2-7 2s-7-1.5-7-2V8.7zm0 6C6.7 15.5 9.2 16 12 16s5.3-.5 7-1.3V18c0 .5-2.6 2-7 2s-7-1.5-7-2v-3.3z"/></svg>
+        Dataset
+      </a>
+      <a class="btn btn-light" href="static/pdfs/supplementary_material.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 13h8v2H8v-2zm0 4h8v2H8v-2zm0-8h3v2H8V9z"/></svg>
+        Supplementary
+      </a>
+      <a class="btn btn-ghost" href="#video">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+        Watch video
+      </a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#stats" aria-label="Scroll down"><span></span></a>
+</header>
+
+<main>
+<!-- ============================== stats ============================== -->
+<section class="stats" id="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-count="1260">1,260</div><div class="lbl">sequences</div></div>
+    <div class="stat"><div class="num">1.45M</div><div class="lbl">frames</div></div>
+    <div class="stat"><div class="num" data-count="10">10</div><div class="lbl">subjects</div></div>
+    <div class="stat"><div class="num" data-count="14">14</div><div class="lbl">everyday objects</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">grasp paradigms<br><small>G2 · G3 · G5</small></div></div>
+    <div class="stat"><div class="num">7<span class="plus">+</span>2</div><div class="lbl">RGB-D views<br><small>fixed + wrist-mounted</small></div></div>
+  </div>
+</section>
+
+<!-- ============================== teaser video ============================== -->
+<section class="section" id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dataset overview</p>
+      <h2>One minute of WristHOI</h2>
+      <p class="lead">Hands, objects, dense contact and interaction phases — rendered from the released labels in all nine synchronized views.</p>
+    </div>
+    <figure class="media-frame is-hero">
+      <video controls muted loop playsinline preload="metadata" poster="static/images/v2/overview.jpg" data-autoplay>
+        <source src="static/videos/v2/overview.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================== abstract ============================== -->
+<section class="section alt" id="abstract">
+  <div class="wrap narrow">
+    <div class="section-head left">
+      <p class="eyebrow">Abstract</p>
+      <h2>Capturing the &ldquo;last mile&rdquo; of interaction</h2>
+    </div>
+    <p class="abstract">
+      Fine-grained hand-object interaction (HOI) understanding relies heavily on the precise capture of contact dynamics. However, conventional allocentric and egocentric viewpoints are often hindered by severe self-occlusion and object-induced occlusion, resulting in sparse and fragmented contact cues. We present WristHOI, a dual wrist-mounted dataset designed to capture the proximal &ldquo;last-mile&rdquo; of interaction. WristHOI employs a symmetric near-field camera configuration to provide synchronized, complementary observations from both dorsal and palmar perspectives. While this near-field setup introduces technical hurdles such as extreme perspective distortions and rapid viewpoint variations, it offers unprecedented visual evidence at the fingertip-object interface. The dataset comprises 1,260 sequences of 10 subjects interacting with 14 objects across three grasping paradigms (G2, G3, G5). In total, WristHOI provides 1.45M frames with high-quality annotations at multiple levels, including hand-object poses, contact labels, and temporal interaction states. We establish a comprehensive benchmark for pose estimation, contact prediction, and temporal interaction understanding. Our results demonstrate the value of wrist-mounted observations for capturing fine-grained interaction cues under severe occlusion.
+    </p>
+  </div>
+  <div class="wrap">
+    <figure class="figure-card">
+      <img src="static/images/fig011.png" alt="Overview of WristHOI: comparison with egocentric and allocentric HOI datasets, and an example interaction sequence with annotated temporal phases" loading="lazy">
+      <figcaption><b>Figure 1.</b> Overview of WristHOI. <i>Left:</i> comparison with existing egocentric and allocentric HOI datasets. <i>Right:</i> an example hand–object interaction sequence with annotated temporal phases.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================== dataset features ============================== -->
+<section class="section" id="dataset">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What's inside</p>
+      <h2>Rich, multi-level annotations</h2>
+      <p class="lead">Hand and object poses live in one world frame and reproject consistently into every view.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-media"><video muted loop playsinline preload="none" poster="static/images/v2/clip_multiview.jpg" data-autoplay><source src="static/videos/v2/clip_multiview.mp4" type="video/mp4"></video></div>
+      <div class="feature-text">
+        <span class="chip">01</span>
+        <h3>Nine synchronized RGB-D views</h3>
+        <p>Seven fixed allocentric cameras surround the workspace, while two wrist-mounted cameras look at the hand from the <span class="t-dorsal">dorsal</span> and <span class="t-palmar">palmar</span> side at close range. Hand (MANO) and object labels live in one world frame and reproject consistently into every view.</p>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-media"><video muted loop playsinline preload="none" poster="static/images/v2/clip_2d.jpg" data-autoplay><source src="static/videos/v2/clip_2d.mp4" type="video/mp4"></video></div>
+      <div class="feature-text">
+        <span class="chip">02</span>
+        <h3>2D hand keypoints &amp; masks</h3>
+        <p>21 hand keypoints are provided in every view, together with hand segmentation masks for the wrist cameras, where extreme perspective and near-field distortion make the hand appear very differently from conventional viewpoints.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-media"><video muted loop playsinline preload="none" poster="static/images/v2/clip_objects.jpg" data-autoplay><source src="static/videos/v2/clip_objects.mp4" type="video/mp4"></video></div>
+      <div class="feature-text">
+        <span class="chip">03</span>
+        <h3>14 everyday objects</h3>
+        <p>Scanned object meshes at metric scale — from bottles, cups and cans to tools such as pliers, a stapler and a glue gun — with a rigid 6-DoF object pose in every frame, grasped under three paradigms (G2, G3, G5).</p>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-media"><video muted loop playsinline preload="none" poster="static/images/v2/clip_contact.jpg" data-autoplay><source src="static/videos/v2/clip_contact.mp4" type="video/mp4"></video></div>
+      <div class="feature-text">
+        <span class="chip">04</span>
+        <h3>Dense hand–object contact</h3>
+        <p>Per-vertex contact on the 778 MANO vertices is derived from the 3D hand and object geometry, and can be visualized directly in the wrist views where the fingertip–object interface is actually observed.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-media"><video muted loop playsinline preload="none" poster="static/images/v2/clip_states.jpg" data-autoplay><source src="static/videos/v2/clip_states.mp4" type="video/mp4"></video></div>
+      <div class="feature-text">
+        <span class="chip">05</span>
+        <h3>Four-phase interaction states</h3>
+        <p>Each sequence is segmented into <span class="ph ph-a">Approach</span> <span class="ph ph-s">Contact-Start</span> <span class="ph ph-i">In-Contact</span> <span class="ph ph-r">Release</span>, and every phase is paired with a language description — enabling text-guided temporal localization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== wrist camera localization ============================== -->
+<section class="section dark" id="localization">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Wrist-camera localization</p>
+      <h2>Where are the wrist cameras?</h2>
+      <p class="lead">The wrist cameras move with the hand. Their world pose is recovered for every frame from a static AprilTag map, so that world-space hand and object labels become pixel-aligned in the egocentric wrist views.</p>
+    </div>
+    <figure class="media-frame is-hero">
+      <video controls muted loop playsinline preload="none" poster="static/images/v2/wrist_localization.jpg" data-autoplay>
+        <source src="static/videos/v2/wrist_localization.mp4" type="video/mp4">
+      </video>
+    </figure>
+    <ol class="steps">
+      <li><b>Tag map</b><span>AprilTags on the workspace are refined by multi-view reprojection in the fixed cameras.</span></li>
+      <li><b>Detection</b><span>Tags visible in each wrist view are detected per frame.</span></li>
+      <li><b>Joint PnP</b><span>All visible tag corners constrain one camera pose (RANSAC + LM).</span></li>
+      <li><b>Labels in wrist views</b><span>Hand and object labels are reprojected into the dorsal and palmar views.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== quality ============================== -->
+<section class="section" id="quality">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Annotation quality</p>
+      <h2>Validated on six axes</h2>
+      <p class="lead">Automatic labels are compared against a <b>three-annotator fused manual ground truth</b> together with inter-annotator agreement (IAA); geometric checks (depth, penetration, temporal states) run on full p007 + p008 sequences.</p>
+    </div>
+    <div class="quality">
+{{QUALITY}}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== benchmark ============================== -->
+<section class="section alt" id="benchmark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Benchmark</p>
+      <h2>Experimental results</h2>
+      <p class="lead">Dataset characteristics, hand pose estimation, contact prediction and text-guided temporal localization on WristHOI.</p>
+    </div>
+    <div class="seg" role="tablist" aria-label="Benchmark tables">
+      <button class="seg-btn is-active" data-bench="0">Dataset comparison</button>
+      <button class="seg-btn" data-bench="1">Hand pose</button>
+      <button class="seg-btn" data-bench="2">Contact</button>
+      <button class="seg-btn" data-bench="3">Temporal localization</button>
+    </div>
+    <div class="bench">
+{{TABLES}}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== bibtex ============================== -->
+<section class="section" id="bibtex">
+  <div class="wrap narrow">
+    <div class="section-head left">
+      <p class="eyebrow">Citation</p>
+      <h2>BibTeX</h2>
+    </div>
+    <div class="bibtex">
+      <button class="copy-btn" id="copy-bibtex" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Copy</span>
+      </button>
+<pre id="bibtex-code"><code>@inproceedings{chu2027wristhoi,
+  title     = {WristHOI: A Dual Wrist-mounted Dataset for Contact-aware Hand-Object Interaction},
+  author    = {Chu, Xin and Sung, Junghoon and Kim, Changho and Cho, Seongwhan and Choi, Eunjee and Lee, JongHa and Choi, Younggeun},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2027}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== acknowledgments ============================== -->
+<section class="section alt slim" id="acknowledgments">
+  <div class="wrap narrow">
+    <h3 class="ack-title">Acknowledgments</h3>
+    <p class="ack">
+      This research was supported by the MSIT (Ministry of Science and ICT), Korea, under the ITRC (Information Technology Research Center) support program (IITP-2025-RS-2024-00437102) and the Global Research Support Program in the Digital Field program (IITP-2025-RS-2024-00418641) supervised by the IITP (Institute for Information &amp; Communications Technology Planning &amp; Evaluation).
+    </p>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>This page is adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>, which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page. Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+<script src="static/js/wristhoi.js"></script>
+</body>
+</html>

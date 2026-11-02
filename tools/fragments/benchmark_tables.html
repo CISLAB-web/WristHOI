@@ -1,0 +1,419 @@
+      <div class="paper-table-block is-wide" id="table-dataset-comparison">
+        <h3 class="title is-4 paper-table-title">Comparison with Representative HOI Datasets</h3>
+        <p class="paper-table-subtitle">
+          WristHOI compared with existing hand–object interaction datasets in terms of observation setup, annotation scope, and dataset scale.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+          <thead>
+            <tr>
+              <th class="text-left" rowspan="2">Dataset</th>
+              <th class="group-header" colspan="5">Observation Setup</th>
+              <th class="group-header" colspan="5">Annotations</th>
+              <th class="group-header" colspan="3">Statistics</th>
+            </tr>
+            <tr>
+              <th class="num">Ego.</th>
+              <th class="num">Wrist</th>
+              <th class="num">Allo.</th>
+              <th class="num">Type</th>
+              <th class="num">Res.</th>
+              <th class="num">Hand</th>
+              <th class="num">Obj.</th>
+              <th class="num">Contact</th>
+              <th class="num">Text</th>
+              <th class="num">Method</th>
+              <th class="num">Subjects</th>
+              <th class="num">Objects</th>
+              <th class="num">Frames</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">DexYCB [7]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">10</td>
+              <td class="num">20</td>
+              <td class="num">582K</td>
+            </tr>
+            <tr>
+              <td class="text-left">ContactPose [4]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1920×1080</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Marker</td>
+              <td class="num">50</td>
+              <td class="num">25</td>
+              <td class="num">2.9M</td>
+            </tr>
+            <tr>
+              <td class="text-left">ARCTIC [15]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB</td>
+              <td class="num">2800×2000</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">MoCap</td>
+              <td class="num">10</td>
+              <td class="num">11</td>
+              <td class="num">2.1M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HOI4D [44]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1280×800</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">4</td>
+              <td class="num">800</td>
+              <td class="num">2.4M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HOT3D [1]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1408×1408</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">19</td>
+              <td class="num">33</td>
+              <td class="num">3.7M</td>
+            </tr>
+            <tr>
+              <td class="text-left">OakInk2 [45]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">848×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">9</td>
+              <td class="num">75</td>
+              <td class="num">4.0M</td>
+            </tr>
+            <tr>
+              <td class="text-left">HO3D [18]</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Automatic</td>
+              <td class="num">10</td>
+              <td class="num">10</td>
+              <td class="num">103K</td>
+            </tr>
+            <tr>
+              <td class="text-left">H2O [34]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">1280×720</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">4</td>
+              <td class="num">8</td>
+              <td class="num">571K</td>
+            </tr>
+            <tr>
+              <td class="text-left">Hoi! [13]</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num">RGB</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Automatic</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+              <td class="num">381</td>
+              <td class="num"><span class="cell-na">N/A</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td class="text-left">WristHOI (Ours)</td>
+              <td class="num"><span class="cell-no">✗</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">RGB-D</td>
+              <td class="num">640×480</td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num"><span class="cell-yes">✓</span></td>
+              <td class="num">Semi-auto</td>
+              <td class="num">10</td>
+              <td class="num">14</td>
+              <td class="num">1.45M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <div class="paper-table-block">
+        <h3 class="title is-4 paper-table-title">Hand Pose Estimation Performance</h3>
+        <p class="paper-table-subtitle">
+          Comparison between fixed-view methods and our wrist-view configurations on the test split.
+          Errors are reported in millimeters (mm). Bold indicates the best overall performance.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table">
+            <thead>
+              <tr>
+                <th class="text-left">Setting</th>
+                <th class="text-left">Method</th>
+                <th class="num">MPJPE <span class="metric-dir">↓</span></th>
+                <th class="num">PA-MPJPE <span class="metric-dir">↓</span></th>
+                <th class="num">Mesh Err. <span class="metric-dir">↓</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="4">Fixed-view</td>
+                <td class="text-left">HandOccNet</td>
+                <td class="num">25.41</td>
+                <td class="num">19.62</td>
+                <td class="num">24.50</td>
+              </tr>
+              <tr>
+                <td class="text-left">SemiHand</td>
+                <td class="num">23.19</td>
+                <td class="num">18.57</td>
+                <td class="num">22.37</td>
+              </tr>
+              <tr>
+                <td class="text-left">SimpleHand</td>
+                <td class="num">21.79</td>
+                <td class="num">17.82</td>
+                <td class="num">20.94</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR</td>
+                <td class="num">—</td>
+                <td class="num best">14.20</td>
+                <td class="num">—</td>
+              </tr>
+              <tr class="divider-row"><td colspan="5"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">Wrist-view</td>
+                <td class="text-left">HaMeR (Dorsal)</td>
+                <td class="num">—</td>
+                <td class="num">13.83</td>
+                <td class="num">14.28</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR (Palmar)</td>
+                <td class="num">—</td>
+                <td class="num">13.69</td>
+                <td class="num">14.24</td>
+              </tr>
+              <tr>
+                <td class="text-left">HaMeR (Dual-wrist)</td>
+                <td class="num">—</td>
+                <td class="num best">13.45</td>
+                <td class="num best">13.73</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Contact prediction -->
+      <div class="paper-table-block">
+        <h3 class="title is-4 paper-table-title">Contact Prediction Results</h3>
+        <p class="paper-table-subtitle">
+          Performance of HACO under single-view inputs and dual-wrist fusion ablations. Early fusion corresponds to the
+          <strong>Dual-wrist</strong> baseline; gated fusion yields the best overall contact prediction. Bold indicates the best result per column.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table">
+            <thead>
+              <tr>
+                <th class="text-left">Setting</th>
+                <th class="text-left">Input / Fusion</th>
+                <th class="num">Contact F1 <span class="metric-dir">↑</span></th>
+                <th class="num">Precision <span class="metric-dir">↑</span></th>
+                <th class="num">Recall <span class="metric-dir">↑</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">Single-view</td>
+                <td class="text-left">Fixed-only</td>
+                <td class="num">0.486</td>
+                <td class="num">0.427</td>
+                <td class="num">0.682</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.477</td>
+                <td class="num">0.409</td>
+                <td class="num">0.684</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar-only</td>
+                <td class="num">0.597</td>
+                <td class="num">0.523</td>
+                <td class="num">0.753</td>
+              </tr>
+              <tr class="divider-row"><td colspan="5"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="4">Dual fusion</td>
+                <td class="text-left">Early fusion</td>
+                <td class="num">0.498</td>
+                <td class="num">0.419</td>
+                <td class="num">0.700</td>
+              </tr>
+              <tr>
+                <td class="text-left">Late-add</td>
+                <td class="num">0.527</td>
+                <td class="num">0.470</td>
+                <td class="num">0.692</td>
+              </tr>
+              <tr>
+                <td class="text-left">Late-cat-proj</td>
+                <td class="num">0.489</td>
+                <td class="num">0.398</td>
+                <td class="num">0.743</td>
+              </tr>
+              <tr>
+                <td class="text-left">Gated fusion</td>
+                <td class="num best">0.619</td>
+                <td class="num best">0.532</td>
+                <td class="num best">0.765</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Text-guided temporal localization -->
+      <div class="paper-table-block is-wide">
+        <h3 class="title is-4 paper-table-title">Text-guided Temporal Localization</h3>
+        <p class="paper-table-subtitle">
+          ZS: zero-shot; TH: trainable head. S.Err and E.Err denote the absolute errors of the predicted start and end boundaries, respectively.
+        </p>
+        <div class="paper-table-scroll">
+          <table class="paper-table is-compact">
+            <thead>
+              <tr>
+                <th class="text-left" rowspan="2">Model</th>
+                <th class="text-left" rowspan="2">Input</th>
+                <th class="num" colspan="4">Acc.</th>
+                <th class="num" colspan="2">Temp. Err.</th>
+              </tr>
+              <tr>
+                <th class="num">R1@0.3 <span class="metric-dir">↑</span></th>
+                <th class="num">R1@0.5 <span class="metric-dir">↑</span></th>
+                <th class="num">R1@0.7 <span class="metric-dir">↑</span></th>
+                <th class="num">mIoU <span class="metric-dir">↑</span></th>
+                <th class="num">S.Err <span class="metric-dir">↓</span></th>
+                <th class="num">E.Err <span class="metric-dir">↓</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">CLIP-ZS</td>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.027</td>
+                <td class="num">0.015</td>
+                <td class="num">0.001</td>
+                <td class="num">0.046</td>
+                <td class="num">42.358</td>
+                <td class="num">44.636</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar</td>
+                <td class="num best">0.071</td>
+                <td class="num best">0.035</td>
+                <td class="num best">0.014</td>
+                <td class="num best">0.074</td>
+                <td class="num best">39.306</td>
+                <td class="num">44.357</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dual</td>
+                <td class="num">0.048</td>
+                <td class="num">0.022</td>
+                <td class="num">0.004</td>
+                <td class="num">0.054</td>
+                <td class="num">39.350</td>
+                <td class="num best">42.623</td>
+              </tr>
+              <tr class="divider-row"><td colspan="8"></td></tr>
+              <tr>
+                <td class="setting-cell text-left" rowspan="3">CLIP-TH</td>
+                <td class="text-left">Dorsal</td>
+                <td class="num">0.461</td>
+                <td class="num">0.331</td>
+                <td class="num">0.171</td>
+                <td class="num">0.313</td>
+                <td class="num">24.815</td>
+                <td class="num">32.260</td>
+              </tr>
+              <tr>
+                <td class="text-left">Palmar</td>
+                <td class="num">0.549</td>
+                <td class="num">0.424</td>
+                <td class="num">0.250</td>
+                <td class="num">0.384</td>
+                <td class="num">20.907</td>
+                <td class="num">27.134</td>
+              </tr>
+              <tr>
+                <td class="text-left">Dual</td>
+                <td class="num best">0.572</td>
+                <td class="num best">0.446</td>
+                <td class="num best">0.280</td>
+                <td class="num best">0.408</td>
+                <td class="num best">20.785</td>
+                <td class="num best">26.561</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
